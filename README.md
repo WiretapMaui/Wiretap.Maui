@@ -85,23 +85,6 @@ builder.Services.AddHttpClient<ApiService>(...)
     .AddStandardResilienceHandler();
 ```
 
-### Don't Use with OAuth/Auth Clients
-
-**Do NOT** add `WiretapHandler` to HttpClients used for OAuth token exchange - it can interfere with the authentication flow:
-
-```csharp
-// ❌ DON'T do this for auth clients
-builder.Services.AddHttpClient<IAuthService, AuthService>(...)
-    .AddWiretapHandler()  // This breaks OAuth flow!
-
-// ✅ Only add to API clients, not auth clients
-builder.Services.AddHttpClient<ApiService>(...)
-    .AddHttpMessageHandler<AuthTokenHandler>()
-#if DEBUG
-    .AddWiretapHandler()  // OK here - this is for API calls
-#endif
-```
-
 ### Accessing the Inspector
 
 The recommended way to access the HTTP inspector is via manual navigation (add a button in your Settings or Debug menu):

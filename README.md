@@ -5,6 +5,14 @@ In-app HTTP traffic inspector for .NET MAUI - debug network requests like [Chuck
 [![NuGet](https://img.shields.io/nuget/v/Wiretap.Maui.svg)](https://www.nuget.org/packages/Wiretap.Maui/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/list-ios.jpg" width="250" alt="Request List" />
+  <img src="screenshots/detail-ios.jpg" width="250" alt="Request Detail" />
+  <img src="screenshots/notification-android.jpg" width="300" alt="Android Notification" />
+</p>
+
 ## Features
 
 - 📡 **Intercept HTTP traffic** - Captures all requests/responses from your HttpClient
